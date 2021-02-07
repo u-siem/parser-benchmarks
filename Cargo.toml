@@ -1,14 +1,15 @@
 [package]
 name = "usiem-parse-benchmark"
-version = "0.0.3"
+version = "0.0.4"
 authors = ["Samuel Garcés <samuel.garces@protonmail.com>"]
 license = "MIT"
 description = "Benchmark of uSIEM parsers"
 repository = "https://github.com/u-siem/u-siem-core"
-keywords = ["SIEM", "security", "logs","opnsense","firewall"]
+keywords = ["SIEM", "security", "logs","benchmark","firewall"]
 categories = ["security"]
 edition = "2018"
 
 [dependencies]
 u-siem = {version = "0.0"}
-u-siem-opnsense = "0.0.3"
+u-siem-opnsense = "0.0"
+u-siem-sonicwall = "0.0"

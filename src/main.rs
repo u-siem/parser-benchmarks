@@ -1,5 +1,6 @@
 mod opnsense;
 mod sonicwall;
+mod paloalto;
 
 fn main() {
     println!("Starting Benchmark:");
@@ -10,6 +11,9 @@ fn main() {
     println!("---------------------------------------------------------------");
     let elapsed_sonicwall = sonicwall::benchmark_sonicwall(n_events);
     println!("SonicWall:\t{} EPS",(n_events * 1000) as u128 / elapsed_sonicwall);
+    println!("---------------------------------------------------------------");
+    let elapsed_paloalto = paloalto::benchmark_paloalto(n_events);
+    println!("PaloAlto:\t{} EPS",(n_events * 1000) as u128 / elapsed_paloalto);
     println!("---------------------------------------------------------------");
 }
 

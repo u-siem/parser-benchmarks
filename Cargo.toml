@@ -1,6 +1,6 @@
 [package]
 name = "usiem-parse-benchmark"
-version = "0.0.4"
+version = "0.0.5"
 authors = ["Samuel Garcés <samuel.garces@protonmail.com>"]
 license = "MIT"
 description = "Benchmark of uSIEM parsers"
@@ -13,3 +13,4 @@ edition = "2018"
 u-siem = {version = "0.0"}
 u-siem-opnsense = "0.0"
 u-siem-sonicwall = "0.0"
+u-siem-paloalto = "0.0"

@@ -1,6 +1,7 @@
 mod opnsense;
 mod sonicwall;
 mod paloalto;
+mod windns;
 
 fn main() {
     println!("Starting Benchmark:");
@@ -14,6 +15,9 @@ fn main() {
     println!("---------------------------------------------------------------");
     let elapsed_paloalto = paloalto::benchmark_paloalto(n_events);
     println!("PaloAlto:\t{} EPS",(n_events * 1000) as u128 / elapsed_paloalto);
+    println!("---------------------------------------------------------------");
+    let elapsed_windns = windns::benchmark_windns(n_events);
+    println!("Windows DNS Server:\t{} EPS",(n_events * 1000) as u128 / elapsed_windns);
     println!("---------------------------------------------------------------");
 }
 

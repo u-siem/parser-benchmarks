@@ -3,6 +3,7 @@ mod sonicwall;
 mod paloalto;
 mod windns;
 mod squid;
+mod apache2;
 
 fn main() {
     println!("Starting Benchmark:");
@@ -25,6 +26,12 @@ fn main() {
     println!("---------------------------------------------------------------");
     let elapsed_squidguard = squid::benchmark_squidguard(n_events);
     println!("SquidGuard:\t{} EPS",(n_events * 1000) as u128 / elapsed_squidguard);
+    println!("---------------------------------------------------------------");
+    let elapsed_apache2 = apache2::benchmark_apache2(n_events);
+    println!("Apache2:\t{} EPS",(n_events * 1000) as u128 / elapsed_apache2);
+    println!("---------------------------------------------------------------");
+    let elapsed_modsecurity = apache2::benchmark_modsecurity(n_events);
+    println!("Apache2 ModSecurity:\t{} EPS",(n_events * 1000) as u128 / elapsed_modsecurity);
     println!("---------------------------------------------------------------");
 }
 

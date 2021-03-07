@@ -2,6 +2,7 @@ mod opnsense;
 mod sonicwall;
 mod paloalto;
 mod windns;
+mod squid;
 
 fn main() {
     println!("Starting Benchmark:");
@@ -18,6 +19,12 @@ fn main() {
     println!("---------------------------------------------------------------");
     let elapsed_windns = windns::benchmark_windns(n_events);
     println!("Windows DNS Server:\t{} EPS",(n_events * 1000) as u128 / elapsed_windns);
+    println!("---------------------------------------------------------------");
+    let elapsed_squid = squid::benchmark_squid(n_events);
+    println!("Squid Proxy:\t{} EPS",(n_events * 1000) as u128 / elapsed_squid);
+    println!("---------------------------------------------------------------");
+    let elapsed_squidguard = squid::benchmark_squidguard(n_events);
+    println!("SquidGuard:\t{} EPS",(n_events * 1000) as u128 / elapsed_squidguard);
     println!("---------------------------------------------------------------");
 }
 
